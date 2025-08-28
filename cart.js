@@ -67,15 +67,21 @@ function removeFromCart(name) {
   updateCartDisplay();
 }
 
-function proceedToBuy() {
+async function proceedToBuy() {
   if (cart.length === 0) {
     alert('Your cart is empty!');
     return;
   }
   const name = document.getElementById('customer-name').value.trim();
   const email = document.getElementById('customer-email').value.trim();
-  if (!name || !email) {
-    alert('Please enter your name and email.');
+  const address = document.getElementById('customer-address').value.trim();
+  const mobile = document.getElementById('customer-mobile').value.trim();
+  if (!name || !email || !address || !mobile) {
+    alert('Please fill in all checkout details.');
+    return;
+  }
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert('Please enter a valid 10-digit mobile number.');
     return;
   }
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -85,14 +91,33 @@ function proceedToBuy() {
     itemsList += `- ${product.name} x ${product.quantity} = ₹${(product.price * product.quantity).toFixed(2)}\n`;
   });
   const paymentInstructions = 'Please pay the total amount to the following bank details:\nAccount Number: 123456789\nBank: Example Bank\nIFSC: EXMP0001\n\nAfter payment, please reply to this email with the payment proof to confirm your order.';
-  const body = `Dear ${name},\n\nYour order has been placed successfully!\n\nOrder Reference ID: ${refID}\n\nOrder Details:\n${itemsList}\nTotal Amount: ₹${total.toFixed(2)}\n\n${paymentInstructions}\n\nThank you for shopping with CAKEIRIS!`;
-  const encodedBody = encodeURIComponent(body);
-  const encodedSubject = encodeURIComponent(`Order Confirmation - ${refID}`);
-  window.location.href = `mailto:rockstarking775@gmail.com?bcc=${encodeURIComponent(email)}&subject=${encodedSubject}&body=${encodedBody}`;
-  alert(`Order placed! An email with Reference ID ${refID} has been sent to ${email}. Please check your email client.`);
-  cart = [];
-  updateCartDisplay();
-  closeCart();
+  const emailContent = {
+    to: [email, 'rockstarking775@gmail.com'],
+    subject: `Order Confirmation - ${refID}`,
+    body: `Dear ${name},\n\nYour order has been placed successfully!\n\nOrder Reference ID: ${refID}\nCustomer Name: ${name}\nAddress: ${address}\nMobile Number: ${mobile}\n\nOrder Details:\n${itemsList}\nTotal Amount: ₹${total.toFixed(2)}\n\n${paymentInstructions}\n\nThank you for shopping with CAKEIRIS!`
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(emailContent)
+    });
+    if (response.ok) {
+      alert(`Order placed! An email with Reference ID ${refID} has been sent to ${email} and rockstarking775@gmail.com.`);
+      cart = [];
+      updateCartDisplay();
+      closeCart();
+    } else {
+      throw new Error('Failed to send email');
+    }
+  } catch (error) {
+    console.error('Error sending email:', error);
+    alert(`Order placed, but email sending failed. Reference ID: ${refID}. Please contact support at rockstarking775@gmail.com.`);
+    cart = [];
+    updateCartDisplay();
+    closeCart();
+  }
 }
 
 function showCart() {
