@@ -1,0 +1,56 @@
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem; /* Added padding for better spacing */
+}
+
+.about .img {
+    flex: 1 1 40rem;
+}
+
+.about .img img {
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(55, 76, 151, 0.7);
+    border: 0.1rem solid rgba(141, 121, 121, 0.7);
+}
+h2 {
+    position: relative;
+    font-size: 12vw; /* Maximize the font size */
+    color: #70d8f1; /* Lighter color for better contrast */
+    -webkit-text-stroke: 0.3vw #3f4457;
+    text-transform: uppercase;
+}
+
+.about .content {
+    flex: 1 1 40rem;
+    display: flex; /* Use flex for centering */
+    justify-content: center; /* Center the box */
+}
+
+.about .about-box {
+    background: #e67ecb; /* White background for the box */
+    padding: 2rem; /* Add padding inside the box */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 0.5rem 1rem rgba(246, 17, 17, 0.2); /* Subtle shadow */
+    max-width: 90%; /* Ensure the box doesn't overflow */
+}
+
+.about .about-box h3 {
+    color: #222;
+    font-size: 2.5rem;
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+.about .about-box p {
+    color: #222;
+    font-size: 1.4rem;
+    line-height: 1.6; /* Improved readability */
+    padding: 1rem 0; /* Space above and below paragraphs */
+}
+
+.about .about-box h1 {
+    text-align: center; /* Center the thank you message */
+    color: #222; /* Same color as other texts */
+}

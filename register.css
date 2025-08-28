@@ -1,0 +1,17 @@
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #3498db; /* Blue background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}

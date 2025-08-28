@@ -1,0 +1,543 @@
+/* style.css */
+
+@import url(
+'https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&amp;display=swap');
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 0;
+}
+.category .box-container .box {
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(9, 9, 9, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+}
+.category .box-container .box:hover {
+    background-color: var(--color);
+    color: rgb(237, 229, 229);
+    transform: scale(1.05);
+}
+
+.category .box-container .box:hover h3 {
+    color: #fff;
+}
+.category .box-container .box img {
+    height: 15rem;
+    width: 100%;
+    object-fit: cover;
+}
+.banner-container .banner:hover img {
+    transform: scale(1.1); /* Slight zoom-in effect */
+    transition: transform 0.3s ease-in-out;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+:root {
+    --color: #950a516a;
+}
+
+body {
+    background: #942a2a;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background: var(--color);
+    color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+}
+
+.btn:hover {
+    background: #222;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 3rem 9%;
+}
+
+.heading {
+    background: url(
+&quot;https://media.geeksforgeeks.org/wp-content/uploads/20240301113805/image11_100.png&quot;) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.7);
+}
+
+.heading h1 {
+    color: #000000;
+    font-size: 4rem;
+
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 1.2rem 0;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.7);
+    color: #e42121;
+}
+
+.title span {
+    color: #222;
+    padding-left: .7rem;
+}
+
+.title a {
+    margin-left: auto;
+    color: #222;
+    font-size: 1.5rem;
+}
+
+.title a:hover {
+    color: #fff;
+}
+
+.header {
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures it stays above other content */
+    background: var(--color); /* Use your existing color variable */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure body has top padding to avoid content being hidden behind the header */
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your header */
+    background: #ffffff;
+}
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+.header .logo i {
+    color: #222;
+    padding-right: .5rem;
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    color: #fff;
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover {
+    color: #222;
+}
+
+.header .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.header .icons div:hover {
+    color: #222;
+}
+
+#menu-btn {
+    display: none;
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateY(-5rem);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.home {
+    padding-top: 14rem;
+    background: url(
+&quot;https://media.geeksforgeeks.org/wp-content/uploads/20240301113805/image11_100.png&quot;) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home .slides-container .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    display: none;
+}
+
+.home .slides-container .slide.active {
+    display: flex;
+}
+
+.home .slides-container .slide .content {
+    flex: 1 1 40rem;
+    animation: fadeLeft .4s linear .4s backwards;
+}
+
+.home .slides-container .slide .content span {
+    color: #000;
+    font-size: 2.5rem;
+}
+
+.home .slides-container .slide .content h3 {
+    font-size: 6rem;
+    color: #222;
+    padding: .5rem 0;
+}
+
+.home .slides-container .slide .img {
+    flex: 1 1 40rem;
+    margin: 3rem 0;
+}
+
+.home .slides-container .slide .img img {
+    width: 100%;
+    animation: fadeUp .4s linear;
+}
+
+.home #next-slide,
+.home #prev-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+    text-align: center;
+    background: var(--color);
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.home #next-slide:hover,
+.home #prev-slide:hover {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.home #prev-slide {
+    left: 2rem;
+}
+
+.home #next-slide {
+    right: 2rem;
+}
+
+.banner-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+}
+
+.banner-container .banner {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+}
+
+.banner-container .banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner-container .banner .content {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+}
+
+.banner-container .banner .content span {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.banner-container .banner .content h3 {
+    font-size: 2rem;
+    padding-top: .5rem;
+    color: #fff;
+}
+
+.banner-container .banner .content .btn {
+    padding: .8rem 2.5rem;
+}
+
+.banner-container .banner:hover img {
+    transform: scale(1.2);
+}
+
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 0;
+}
+
+.category .box-container .box {
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border: 0.1rem solid rgba(0, 0, 0, 0.7);
+}
+
+.category .box-container .box img {
+    height: 15rem;
+    width: 21rem;
+}
+
+.category .box-container .box h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #222;
+}
+
+.category .box-container .box:hover h3 {
+    color: #fff;
+}
+
+.footer {
+    background: var(--color);
+
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: #222;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    color: #000;
+    padding-bottom: .5rem;
+}
+
+.footer .box-container .box a {
+    font-size: 1.4rem;
+    color: #000;
+    padding: 1rem 0;
+    display: block;
+}
+
+.footer .box-container .box a:hover {
+    color: #fff;
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .box-container .box a i {
+    padding-right: .5rem;
+    color: #000;
+}
+
+.footer .box-container .box form input[type=&quot;email&quot;] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: #000;
+    margin: 1rem 0;
+    text-transform: none;
+}
+
+.credit {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.credit span {
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: rgb(0, 150, 10);
+}
+
+
+
+/* CSS */
+/* Hamburger Icon */
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #941d576a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #d24040;
+}
+
+/* Hamburger Icon Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 3px 0;
+}
+
+/* Navigation Menu Styles */
+@media screen and (max-width: 900px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #941d576a;
+        border: 1px solid #941d576a;
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .navbar a {
+        flex-direction: column;
+        padding: 15px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .navbar a:hover {
+        background-color: #941d56ab;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/* Cart icon count */
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Cart modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.cart-modal h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cart-modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-modal ul li {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+

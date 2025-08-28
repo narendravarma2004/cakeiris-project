@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAKEIRIS • Products</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Icons (optional) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4RhisWcG2v9Z5G1J3z9Zq9V0qkR9VZt7Cw1f1N6pG9xVtTz4F8DqfXzq+1QfH8I7T2w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="product.css" />
+</head>
+<body>
+  <!-- Page top bar -->
+  <header class="topbar container">
+    <div class="brand">
+      <img src="img1.png" alt="CAKEIRIS" class="logo" />
+      <span>CAKEIRIS</span>
+    </div>
+
+    <div class="top-actions">
+      <button id="theme-toggle" class="btn ghost" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+        <span class="hide-sm">Theme</span>
+      </button>
+
+      <button id="cart-btn" class="btn primary cart-fab" onclick="showCart()" aria-label="Open cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Title -->
+  <section class="hero container">
+    <h1 class="title">Fresh &amp; Tasty <span>Categories</span></h1>
+    <p class="subtitle">Pick your favorites. Everything is baked with love 🍰</p>
+  </section>
+
+  <!-- Products grid -->
+  <section class="category container">
+    <div class="box-container">
+      <!-- Each product card -->
+      <div class="box" data-name="Cupcake" data-price="50">
+        <div class="media">
+          <img decoding="async" src="cup.jpeg" alt="Fresh Cupcake">
+          <span class="chip">New</span>
+        </div>
+        <h3>Cupcake</h3>
+        <p class="price">₹50</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Cookies" data-price="180">
+        <div class="media">
+          <img decoding="async" src="cookie.jpeg" alt="Cookies">
+          <span class="chip">Best Seller</span>
+        </div>
+        <h3>Cookies</h3>
+        <p class="price">₹180</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Brown Bread" data-price="300">
+        <div class="media">
+          <img decoding="async" src="brown.jpg" alt="Brown Bread">
+        </div>
+        <h3>Brown Bread</h3>
+        <p class="price">₹300</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Chocolate" data-price="450">
+        <div class="media">
+          <img decoding="async" src="dark.jpeg" alt="Dark Chocolate">
+          <span class="chip">Hot</span>
+        </div>
+        <h3>Chocolate</h3>
+        <p class="price">₹450</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Wheat" data-price="120">
+        <div class="media">
+          <img decoding="async" src="wheat.jpeg" alt="Wheat">
+        </div>
+        <h3>Wheat</h3>
+        <p class="price">₹120</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Muffin" data-price="200">
+        <div class="media">
+          <img decoding="async" src="muffin.jpg" alt="Muffin">
+        </div>
+        <h3>Muffin</h3>
+        <p class="price">₹200</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Scone" data-price="150">
+        <div class="media">
+          <img decoding="async" src="scone.jpg" alt="Scone">
+        </div>
+        <h3>Scone</h3>
+        <p class="price">₹150</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Pancake" data-price="250">
+        <div class="media">
+          <img decoding="async" src="pancake.jpeg" alt="Pancake">
+        </div>
+        <h3>Pancake</h3>
+        <p class="price">₹250</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Croissant" data-price="300">
+        <div class="media">
+          <img decoding="async" src="croissant.jpeg" alt="Croissant">
+        </div>
+        <h3>Croissant</h3>
+        <p class="price">₹300</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+
+      <div class="box" data-name="Fruit Tart" data-price="380">
+        <div class="media">
+          <img decoding="async" src="fruittart.jpeg" alt="Fruit Tart">
+        </div>
+        <h3>Fruit Tart</h3>
+        <p class="price">₹380</p>
+        <div class="qty-row">
+          <button class="quantity-btn" data-qty="-1">−</button>
+          <input type="number" class="qty-input" value="1" min="1" />
+          <button class="quantity-btn" data-qty="+1">+</button>
+        </div>
+        <button class="add-to-cart btn">
+          <i class="fa-solid fa-cart-plus"></i>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="cart-modal" aria-modal="true" role="dialog" aria-labelledby="cart-title">
+    <div class="cart-card">
+      <button class="close-btn" onclick="closeCart()" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2 id="cart-title">Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong>₹<span id="cart-total">0</span></strong>
+      </div>
+      <button id="buy-btn" class="btn success w-100" onclick="proceedToBuy()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        Proceed to Buy
+      </button>
+    </div>
+    <div class="backdrop" onclick="closeCart()"></div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Item added to cart!</div>
+
+  <script src="cart.js" defer></script>
+</body>
+</html>
