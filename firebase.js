@@ -56,7 +56,7 @@ if (loginBtn) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful!");
-      window.location.href = "blood.html"; // redirect to home/orders page
+      window.location.href = "home.html"; // redirect to home/orders page
     } catch (error) {
       alert(error.message);
     }
