@@ -235,11 +235,11 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,.6);
-}
-.cart-card {
+}.cart-card {
   position: absolute;
   right: 24px;
   top: 24px;
+  bottom: 24px;          /* 👈 allow full height but keep margin */
   width: min(450px, 94vw);
   background: var(--card);
   border: 1px solid rgba(255,255,255,.1);
@@ -248,6 +248,31 @@ body {
   padding: 24px;
   animation: slideIn .3s ease;
   z-index: 1001;
+
+  display: flex;         /* 👈 make flexbox column */
+  flex-direction: column;
+}
+
+.cart-card h2 {
+  flex-shrink: 0;        /* 👈 keep header fixed */
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cart-body {
+  flex: 1;               /* 👈 take available height */
+  overflow-y: auto;      /* 👈 scroll only this part */
+  padding-right: 6px;    /* space for scrollbar */
+}
+
+/* optional: nicer scrollbar */
+.cart-body::-webkit-scrollbar {
+  width: 6px;
+}
+.cart-body::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
 }
 @keyframes slideIn {
   from { transform: translateY(-12px); opacity: 0; }
