@@ -104,7 +104,7 @@ async function proceedToBuy() {
   body: JSON.stringify(emailContent)
 });
     if (response.ok) {
-      alert(`Order placed! An email with Reference ID ${refID} has been sent to ${email} and rockstarking775@gmail.com.`);
+      alert(`Order placed! An email with Reference ID ${refID} has been sent to ${email} and rockstarking775@gmail.com. \n nFor any information regarding orders kindly contact admin shown in contact section`);
       cart = [];
       updateCartDisplay();
       closeCart();
