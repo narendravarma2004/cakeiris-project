@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
 
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +13,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #2c3e50, #34495e); /* Elegant gradient background */
+    background: linear-gradient(to right, #2c3e50, #34495e);
     flex-direction: column;
 }
+
+/* Tagline */
 h4 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -25,11 +28,11 @@ h4 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Main Title */
 h2 {
     position: relative;
-    font-size: 12vw; /* Maximize the font size */
-    color: #ecf0f1; /* Lighter color for better contrast */
+    font-size: 12vw;
+    color: #ecf0f1;
     -webkit-text-stroke: 0.3vw #383d52;
     text-transform: uppercase;
 }
@@ -47,23 +50,6 @@ h2::before {
     overflow: hidden;
     animation: animate 5s linear infinite;
 }
-.register-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #1abc9c; /* Light teal background */
-    color: #fff; /* White text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-}
-
-.register-btn:hover {
-    background-color: #16a085; /* Darker teal on hover */
-}
 
 @keyframes animate {
     0%, 10%, 100% {
@@ -74,18 +60,19 @@ h2::before {
     }
 }
 
+/* Login Box */
 .login-box {
-    background-color: #383d52; /* Keep the login box color */
+    background-color: #383d52;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    margin-top: 20px; /* Slightly reduced margin to fit well with the title */
+    margin-top: 20px;
+    text-align: center;
 }
 
 .login-box h3 {
-    color: #e37317; /* Green color for the heading */
-    text-align: center;
+    color: #e37317;
     margin-bottom: 20px;
 }
 
@@ -95,16 +82,39 @@ h2::before {
     margin: 10px 0;
     border: none;
     border-radius: 5px;
-    background: #e6e6e6; /* Light input field background */
+    background: #e6e6e6;
+    font-size: 14px;
 }
 
+/* Login Button */
 .login-box input[type="submit"] {
-    background-color: #88c066; /* Green background for the submit button */
-    color: #252839; /* Dark text color */
+    background-color: #88c066;
+    color: #252839;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .login-box input[type="submit"]:hover {
-    background-color: #0dce7e; /* Slightly darker green on hover */
+    background-color: #0dce7e;
+}
+
+/* Register Button */
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #16a085;
 }

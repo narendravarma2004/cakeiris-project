@@ -7,49 +7,19 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <!-- Animated Heading -->
   <h2 data-text="Cakeiri&Sopf;">Cakeiri&Sopf;</h2>
-  <h4>"Artful creations, unforgettable flavors."</h4>
+  <h4>"Artful creations, unforgettable moments"</h4>
 
+  <!-- Login Box -->
   <div class="login-box">
     <h3>Login</h3>
-    <input type="email" id="loginEmail" placeholder="Email" required>
-    <input type="password" id="loginPassword" placeholder="Password" required>
-    <button id="loginBtn">Login</button>
-    <button class="register-btn" onclick="window.location.href='register.html'">Register Now</button>
+    <form action="/login" method="POST">
+      <input type="text" name="username" placeholder="Enter Username" required>
+      <input type="password" name="password" placeholder="Enter Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <button class="register-btn">Register Now</button>
   </div>
-
-  <!-- Example Order Button -->
-  <div style="margin-top:30px; text-align:center;">
-    <button id="placeOrderBtn">Place Order</button>
-    <p id="orderStatus"></p>
-  </div>
-
-  <script type="module" src="firebase.js"></script>
-  <script>
-    // Example: Trigger Netlify Function for order email
-    document.getElementById("placeOrderBtn").addEventListener("click", async () => {
-      const orderId = "ORDER-Z77TJX88"; // Example Order ID
-      const customerEmail = document.getElementById("loginEmail").value || "customer@example.com";
-
-      document.getElementById("orderStatus").innerText = "Placing order...";
-
-      try {
-        const res = await fetch("/.netlify/functions/send-email", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            orderId: orderId,
-            email: customerEmail
-          })
-        });
-
-        const data = await res.json();
-        document.getElementById("orderStatus").innerText = "✅ Email Sent! " + data.message;
-      } catch (err) {
-        console.error(err);
-        document.getElementById("orderStatus").innerText = "❌ Failed to send email.";
-      }
-    });
-  </script>
 </body>
 </html>
