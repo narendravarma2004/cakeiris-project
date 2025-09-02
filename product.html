@@ -140,35 +140,30 @@
   </section>
   <div id="cart-modal" class="cart-modal" aria-modal="true" role="dialog" aria-labelledby="cart-title">
     <div class="cart-card">
-  <button class="close-btn" onclick="closeCart()" aria-label="Close">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-  <h2 id="cart-title">Your Cart</h2>
-
-  <div class="cart-body">
-    <ul id="cart-items"></ul>
-    <div class="cart-summary">
-      <span>Total</span>
-      <strong>₹<span id="cart-total">0</span></strong>
+      <button class="close-btn" onclick="closeCart()" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2 id="cart-title">Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong>₹<span id="cart-total">0</span></strong>
+      </div>
+      <div class="checkout-form">
+        <h3>Checkout Details</h3>
+        <label for="customer-name">Name:</label>
+        <input type="text" id="customer-name" class="form-input" required>
+        <label for="customer-email">Email:</label>
+        <input type="email" id="customer-email" class="form-input" required>
+        <label for="customer-address">Address:</label>
+        <textarea id="customer-address" class="form-input" required></textarea>
+        <label for="customer-mobile">Mobile Number:</label>
+        <input type="tel" id="customer-mobile" class="form-input" pattern="[0-9]{10}" required>
+      </div>
+      <button id="buy-btn" class="btn success w-100" onclick="proceedToBuy()">
+        <i class="fa-solid fa-bag-shopping"></i> Proceed to Buy
+      </button>
     </div>
-    <div class="checkout-form">
-      <h3>Checkout Details</h3>
-      <label for="customer-name">Name:</label>
-      <input type="text" id="customer-name" class="form-input" required>
-      <label for="customer-email">Email:</label>
-      <input type="email" id="customer-email" class="form-input" required>
-      <label for="customer-address">Address:</label>
-      <textarea id="customer-address" class="form-input" required></textarea>
-      <label for="customer-mobile">Mobile Number:</label>
-      <input type="tel" id="customer-mobile" class="form-input" pattern="[0-9]{10}" required>
-    </div>
-  </div>
-
-  <button id="buy-btn" class="btn success w-100" onclick="proceedToBuy()">
-    <i class="fa-solid fa-bag-shopping"></i> Proceed to Buy
-  </button>
-</div>
-
     <div class="backdrop"></div>
   </div>
   <div id="toast" class="toast" role="status" aria-live="polite">Item added to cart!</div>
