@@ -1,163 +1,120 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-}
+@import url('home.css');
 
-.heading {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #4CAF50; /* Green background */
-    color: white;
-}
-
+/* Contact Section */
 .contact {
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-    max-width: 800px;
+  padding: 5rem 6%;
 }
 
-.contact .icons-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
-    gap: 1.5rem;
+.contact .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-.contact .icons-container .icons {
-    text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: transform 0.3s;
+/* Info Side */
+.contact .info h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
-.contact .icons-container .icons:hover {
-    transform: translateY(-5px); /* Hover effect */
+.contact .info .subtitle {
+  font-size: 1.6rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
 }
 
-.contact .icons-container .icons i {
-    height: 6rem;
-    width: 6rem;
-    line-height: 6rem;
-    font-size: 3rem;
-    background-color: #4CAF50; /* Green icon background */
-    color: white;
-    border-radius: 50%;
+.icons-grid {
+  display: grid;
+  gap: 1.5rem;
 }
 
-.contact .icons-container .icons h3 {
-    color: #333;
-    font-size: 2rem;
-    padding: 1rem 0;
+.icon-box {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-.contact .icons-container .icons p {
-    color: #555;
-    font-size: 1.5rem;
-    line-height: 2;
+.icon-box:hover {
+  transform: translateY(-5px);
 }
 
-.contact .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
+.icon-box i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
 }
 
-.contact .row form {
-    padding: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 1 40rem;
-    border-radius: 8px;
+.icon-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
-.contact .row form h3 {
-    font-size: 2.5rem;
-    padding-bottom: 1rem;
-    color: #4CAF50; /* Green color */
+.icon-box p {
+  font-size: 1.4rem;
+  color: var(--muted);
 }
 
-.contact .row form .inputBox {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+/* Form Side */
+.contact .form {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.contact .row form .inputBox .box,
-.contact .row form textarea {
-    padding: 1rem 1.2rem;
-    font-size: 1.6rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #222;
-    text-transform: none;
-    margin: .7rem 0;
-    border-radius: 4px;
+.contact .form h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
 }
 
-.contact .row form textarea {
-    width: 100%;
-    height: 15rem;
-    resize: none;
+.contact .form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.contact .row form .btn {
-    background-color: #4CAF50; /* Green button */
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: background-color 0.3s;
+.form-input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  font-size: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border 0.3s;
 }
 
-.contact .row form .btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+.form-input:focus {
+  border-color: var(--primary);
 }
 
-.footer {
-    background-color: #f9f9f9;
-    padding: 2rem 0;
+textarea.form-input {
+  width: 100%;
+  resize: none;
 }
 
-.footer .box-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
+.btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-.footer .box {
-    flex: 1;
-    margin: 0 1rem;
-}
-
-.footer .box h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.footer .box a {
-    display: block;
-    color: #333;
-    margin: 0.5rem 0;
-    text-decoration: none;
-}
-
-.footer .box a:hover {
-    text-decoration: underline;
-}
-
-.credit {
-    text-align: center;
-    padding: 1rem;
-    background-color: #4CAF50; /* Green background */
-    color: white;
+.btn:hover {
+  transform: scale(1.05);
 }

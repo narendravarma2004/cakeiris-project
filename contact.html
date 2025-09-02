@@ -1,99 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact • CAKEIRIS</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="contact.css" />
 </head>
-
 <body>
-    <div class="heading">
-        <h1>Reach Us</h1>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">CAKEIRIS <span>.</span></div>
+    <nav class="navbar" id="navbar">
+      <a href="home.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+    <div class="icons">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="icon-btn" id="logout-btn" aria-label="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+      <button class="hamburger" id="menu-btn" aria-label="Toggle menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
     </div>
+  </header>
 
-    <section class="contact" id="contact">
-        <div class="icons-container">
-            <div class="icons">
-                <i class="fas fa-phone"></i>
-                <h3>Contact Number</h3>
-                <p>+91 9876543210</p>
-                <p>+91 9638527401</p>
-            </div>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <!-- Contact Info -->
+      <div class="info">
+        <h2>Reach Us</h2>
+        <p class="subtitle">We’d love to hear from you!</p>
 
-            <div class="icons">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p>cakeiris2803@gmail.com</p>
-                <p>ip4318@gmail.com</p>
-            </div>
+        <div class="icons-grid">
+          <div class="icon-box">
+            <i class="fas fa-phone"></i>
+            <h3>Contact Number</h3>
+            <p>+91 9876543210</p>
+            <p>+91 9638527401</p>
+          </div>
 
-            <div class="icons">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Address</h3>
-                <p>India</p>
-            </div>
+          <div class="icon-box">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>cakeiris28@gmail.com</p>
+          </div>
+
+          <div class="icon-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>Chennai - India</p>
+          </div>
         </div>
+      </div>
 
-        <div class="row">
-            <form action="">
-                <h3>Get in Touch</h3>
-                <div class="inputBox">
-                    <input type="text" placeholder="Enter your name" class="box" required>
-                    <input type="email" placeholder="Enter your email" class="box" required>
-                </div>
-                <div class="inputBox">
-                    <input type="tel" placeholder="Enter your number" class="box" required>
-                    <input type="text" placeholder="Enter your subject" class="box" required>
-                </div>
-                <textarea placeholder="Your message" cols="30" rows="10" required></textarea>
-                <input type="submit" value="Send Message" class="btn">
-            </form>
-        </div>
-    </section>
-
-    <div class="space"></div>
-
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>Quick Links</h3>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Home</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Shop</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> About</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Review</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Blog</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Contact</a>
-            </div>
-
-            <div class="box">
-                <h3>Follow Us</h3>
-                <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
-                <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
-                <a href="https://www.instagram.com/janasenaparty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <i class="fab fa-instagram"></i> Instagram </a>
-                <a href="#"> <i class="fab fa-linkedin"></i> LinkedIn </a>
-                <a href="#"> <i class="fab fa-pinterest"></i> Pinterest </a>
-            </div>
-
-            <div class="box">
-                <h3>Newsletter</h3>
-                <p>Don't miss any offer</p>
-                <form action="">
-                    <input type="email" placeholder="Your e-mail" required>
-                    <input type="submit" value="Subscribe" class="btn">
-                </form>
-            </div>
-        </div>
-    </section>
-    <div class="footer">
-		<center>
-        &copy; 2024 <strong>CAKEIRIS</strong>. All Rights Reserved.
-		</center>
+      <!-- Contact Form -->
+      <div class="form">
+        <h3>Get in Touch</h3>
+        <form action="#" onsubmit="return false;">
+          <div class="row">
+            <input type="text" placeholder="Enter your name" class="form-input" required />
+            <input type="email" placeholder="Enter your email" class="form-input" required />
+          </div>
+          <div class="row">
+            <input type="tel" placeholder="Enter your number" class="form-input" required />
+            <input type="text" placeholder="Enter your subject" class="form-input" required />
+          </div>
+          <textarea placeholder="Your message" rows="5" class="form-input" required></textarea>
+          <input type="submit" value="Send Message" class="btn" />
+        </form>
+      </div>
     </div>
-    <script src="blood.js" defer data-deferred="1"></script>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="index.html"><i class="fas fa-arrow-right"></i> Home</a>
+        <a href="product.html"><i class="fas fa-arrow-right"></i> Shop</a>
+        <a href="about.html"><i class="fas fa-arrow-right"></i> About</a>
+        <a href="reviews.html"><i class="fas fa-arrow-right"></i> Review</a>
+        <a href="blog.html"><i class="fas fa-arrow-right"></i> Blog</a>
+        <a href="contact.html"><i class="fas fa-arrow-right"></i> Contact</a>
+      </div>
+      <div class="box">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#"><i class="fab fa-x"></i> Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fab fa-pinterest"></i> Pinterest</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+      </div>
+      <div class="box">
+        <h3>Newsletter</h3>
+        <p>Don’t miss any Offer</p>
+        <form action="#" onsubmit="return false;">
+          <input type="email" placeholder="your e-mail" class="form-input" />
+          <input type="submit" value="Subscribe" class="btn" />
+        </form>
+      </div>
+    </div>
+    <div class="credit">&copy; <span>CAKEIRIS</span> 2025. All Rights Reserved.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="home.js" defer></script>
 </body>
-
 </html>

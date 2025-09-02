@@ -2,176 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CAKEIRIS • Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile • CAKEIRIS</title>
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="profile.css" />
 </head>
 <body>
-  <header class="topbar container">
-    <div class="brand">
-      <img src="img1.png" alt="CAKEIRIS" class="logo" />
-      <span>CAKEIRIS</span>
-    </div>
-    <div class="top-actions">
-      <button id="theme-toggle" class="btn ghost" aria-label="Toggle theme">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">CAKEIRIS <span>.</span></div>
+    <nav class="navbar" id="navbar">
+      <a href="home.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="profile.html" class="active">Profile</a>
+    </nav>
+    <div class="icons">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
         <i class="fa-solid fa-moon"></i>
-        <span class="hide-sm">Theme</span>
       </button>
-      <button id="cart-btn" class="btn primary cart-fab" onclick="showCart()" aria-label="Open cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="cart-badge" id="cart-count">0</span>
+      <button class="icon-btn" id="logout-btn" aria-label="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+      <button class="hamburger" id="menu-btn" aria-label="Toggle menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
       </button>
     </div>
   </header>
-  <section class="hero container">
-    <h1 class="title">Fresh & Tasty <span>Categories</span></h1>
-    <p class="subtitle">Pick your favorites. Everything is baked with love 🍰</p>
-  </section>
-  <section class="category container">
-    <div class="box-container">
-      <div class="box" data-name="Cupcake" data-price="50" data-img="cup.jpeg">
-        <div class="media">
-          <img decoding="async" src="cup.jpeg" alt="Fresh Cupcake">
-          <span class="chip">New</span>
+
+  <!-- Profile Section -->
+  <section class="profile" id="profile">
+    <div class="container">
+      <div class="card">
+        <div class="avatar">
+          <i class="fa-solid fa-user-circle"></i>
         </div>
-        <h3>Cupcake</h3>
-        <p class="price">₹50</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Cookies" data-price="180" data-img="cookie.jpeg">
-        <div class="media">
-          <img decoding="async" src="cookie.jpeg" alt="Cookies">
-          <span class="chip">Best Seller</span>
-        </div>
-        <h3>Cookies</h3>
-        <p class="price">₹180</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Brown Bread" data-price="300" data-img="brown.jpg">
-        <div class="media">
-          <img decoding="async" src="brown.jpg" alt="Brown Bread">
-        </div>
-        <h3>Brown Bread</h3>
-        <p class="price">₹300</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Chocolate" data-price="450" data-img="dark.jpeg">
-        <div class="media">
-          <img decoding="async" src="dark.jpeg" alt="Dark Chocolate">
-          <span class="chip">Hot</span>
-        </div>
-        <h3>Chocolate</h3>
-        <p class="price">₹450</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Wheat" data-price="120" data-img="wheat.jpeg">
-        <div class="media">
-          <img decoding="async" src="wheat.jpeg" alt="Wheat">
-        </div>
-        <h3>Wheat</h3>
-        <p class="price">₹120</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Muffin" data-price="200" data-img="muffin.jpg">
-        <div class="media">
-          <img decoding="async" src="muffin.jpg" alt="Muffin">
-        </div>
-        <h3>Muffin</h3>
-        <p class="price">₹200</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Scone" data-price="150" data-img="scone.jpg">
-        <div class="media">
-          <img decoding="async" src="scone.jpg" alt="Scone">
-        </div>
-        <h3>Scone</h3>
-        <p class="price">₹150</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Pancake" data-price="250" data-img="pancake.jpeg">
-        <div class="media">
-          <img decoding="async" src="pancake.jpeg" alt="Pancake">
-        </div>
-        <h3>Pancake</h3>
-        <p class="price">₹250</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Croissant" data-price="300" data-img="croissant.jpeg">
-        <div class="media">
-          <img decoding="async" src="croissant.jpeg" alt="Croissant">
-        </div>
-        <h3>Croissant</h3>
-        <p class="price">₹300</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
-      </div>
-      <div class="box" data-name="Fruit Tart" data-price="380" data-img="fruittart.jpeg">
-        <div class="media">
-          <img decoding="async" src="fruittart.jpeg" alt="Fruit Tart">
-        </div>
-        <h3>Fruit Tart</h3>
-        <p class="price">₹380</p>
-        <button class="add-to-cart btn w-100">
-          <i class="fa-solid fa-cart-plus"></i> Add to Cart
-        </button>
+        <h2 id="profileName">Loading...</h2>
+        <p id="profileEmail">Loading...</p>
       </div>
     </div>
   </section>
-  <div id="cart-modal" class="cart-modal" aria-modal="true" role="dialog" aria-labelledby="cart-title">
-    <div class="cart-card">
-  <button class="close-btn" onclick="closeCart()" aria-label="Close">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-  <h2 id="cart-title">Your Cart</h2>
 
-  <div class="cart-body">
-    <ul id="cart-items"></ul>
-    <div class="cart-summary">
-      <span>Total</span>
-      <strong>₹<span id="cart-total">0</span></strong>
-    </div>
-    <div class="checkout-form">
-      <h3>Checkout Details</h3>
-      <label for="customer-name">Name:</label>
-      <input type="text" id="customer-name" class="form-input" required>
-      <label for="customer-email">Email:</label>
-      <input type="email" id="customer-email" class="form-input" required>
-      <label for="customer-address">Address:</label>
-      <textarea id="customer-address" class="form-input" required></textarea>
-      <label for="customer-mobile">Mobile Number:</label>
-      <input type="tel" id="customer-mobile" class="form-input" pattern="[0-9]{10}" required>
-    </div>
-  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 CAKEIRIS. All rights reserved.</p>
+  </footer>
 
-  <button id="buy-btn" class="btn success w-100" onclick="proceedToBuy()">
-    <i class="fa-solid fa-bag-shopping"></i> Proceed to Buy
-  </button>
-</div>
-
-    <div class="backdrop"></div>
-  </div>
-  <div id="toast" class="toast" role="status" aria-live="polite">Item added to cart!</div>
-  <script src="cart.js" defer></script>
+  <!-- Firebase + Script -->
+  <script type="module" src="profile.js"></script>
 </body>
 </html>

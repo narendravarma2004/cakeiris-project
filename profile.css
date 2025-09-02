@@ -47,3 +47,17 @@
   background-clip: text;
   color: transparent;
 }
+
+/* Minimal Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--dark);
+  color: var(--light);
+  font-size: 1.4rem;
+}
+
+.footer span {
+  color: var(--primary);
+  font-weight: 600;
+}

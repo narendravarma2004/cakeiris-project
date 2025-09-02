@@ -16,35 +16,34 @@
     <input type="password" id="loginPassword" placeholder="Password" required>
     <button id="loginBtn" class="login-btn">Login</button>
     <button class="register-btn" onclick="window.location.href='register.html'">Register Now</button>
-    <p id="loginStatus"></p>
   </div>
+
+
 
   <script type="module" src="firebase.js"></script>
   <script>
-    // Login functionality
-    document.getElementById("loginBtn").addEventListener("click", async () => {
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
+    // Example: Trigger Netlify Function for order email
+    document.getElementById("placeOrderBtn").addEventListener("click", async () => {
+      const orderId = "ORDER-Z77TJX88"; // Example Order ID
+      const customerEmail = document.getElementById("loginEmail").value || "customer@example.com";
 
-      if (!email || !password) {
-        document.getElementById("loginStatus").innerText = "⚠ Please fill in all fields.";
-        return;
-      }
-      
+      document.getElementById("orderStatus").innerText = "Placing order...";
+
       try {
-        // Example Firebase login (you must configure in firebase.js)
-        const { signInWithEmailAndPassword, auth } = await import("./firebase.js");
-        await signInWithEmailAndPassword(auth, email, password);
+        const res = await fetch("/.netlify/functions/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            orderId: orderId,
+            email: customerEmail
+          })
+        });
 
-        document.getElementById("loginStatus").innerText = "✅ Login successful!";
-        // Redirect to dashboard/home page
-        setTimeout(() => {
-          window.location.href = "dashboard.html";
-        }, 1500);
-
-      } catch (error) {
-        console.error(error);
-        document.getElementById("loginStatus").innerText = "❌ Login failed: " + error.message;
+        const data = await res.json();
+        document.getElementById("orderStatus").innerText = "✅ Email Sent! " + data.message;
+      } catch (err) {
+        console.error(err);
+        document.getElementById("orderStatus").innerText = "❌ Failed to send email.";
       }
     });
   </script>
