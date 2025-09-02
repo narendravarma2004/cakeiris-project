@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap");
 
-/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,7 @@ body {
     flex-direction: column;
 }
 
-/* Tagline */
+/* Subtitle */
 h4 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -28,7 +27,7 @@ h4 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Main Title */
+/* Main heading with animation */
 h2 {
     position: relative;
     font-size: 12vw;
@@ -52,15 +51,11 @@ h2::before {
 }
 
 @keyframes animate {
-    0%, 10%, 100% {
-        width: 0;
-    }
-    70%, 90% {
-        width: 100%;
-    }
+    0%, 10%, 100% { width: 0; }
+    70%, 90% { width: 100%; }
 }
 
-/* Login Box */
+/* Login box */
 .login-box {
     background-color: #383d52;
     padding: 20px;
@@ -76,6 +71,7 @@ h2::before {
     margin-bottom: 20px;
 }
 
+/* Input fields */
 .login-box input {
     width: 100%;
     padding: 10px;
@@ -83,23 +79,29 @@ h2::before {
     border: none;
     border-radius: 5px;
     background: #e6e6e6;
-    font-size: 14px;
 }
 
-/* Login Button */
-.login-box input[type="submit"] {
-    background-color: #88c066;
-    color: #252839;
+/* Login button */
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #43abfa, #1e90ff);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.login-box input[type="submit"]:hover {
-    background-color: #0dce7e;
+.login-btn:hover {
+    background: linear-gradient(135deg, #1e90ff, #0073e6);
+    transform: scale(1.03);
 }
 
-/* Register Button */
+/* Register button */
 .register-btn {
     display: block;
     width: 100%;
@@ -110,11 +112,19 @@ h2::before {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .register-btn:hover {
     background-color: #16a085;
+    transform: scale(1.03);
+}
+
+/* Status message */
+#loginStatus {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #f1c40f;
 }
