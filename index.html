@@ -30,7 +30,7 @@
         document.getElementById("loginStatus").innerText = "⚠ Please fill in all fields.";
         return;
       }
-
+      
       try {
         // Example Firebase login (you must configure in firebase.js)
         const { signInWithEmailAndPassword, auth } = await import("./firebase.js");
