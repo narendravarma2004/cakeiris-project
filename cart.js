@@ -94,7 +94,7 @@ async function proceedToBuy() {
   const emailContent = {
     to: [email, 'rockstarking775@gmail.com'],
     subject: `Order Confirmation - ${refID}`,
-    body: `Dear ${name},\n\nYour order has been placed successfully!\n\nOrder Reference ID: ${refID}\nCustomer Name: ${name}\nAddress: ${address}\nMobile Number: ${mobile}\n\nOrder Details:\n${itemsList}\nTotal Amount: ₹${total.toFixed(2)}\n\n${paymentInstructions}\n\nThank you for shopping with CAKEIRIS!`
+    body: `Dear ${name},\n\nYour order has been placed successfully!\n\nOrder Reference ID: ${refID}\nCustomer Name: ${name}\nAddress: ${address}\nMobile Number: ${mobile}\n\nOrder Details:\n${itemsList}\nTotal Amount: ₹${total.toFixed(2)}\n\n${paymentInstructions}\n\nThank you for shopping with CAKEIRIS!\n\nFor any information regarding orders kindly contact admin shown in contact section `
   };
 
   try {
