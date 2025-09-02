@@ -7,19 +7,46 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <!-- Animated Heading -->
   <h2 data-text="Cakeiri&Sopf;">Cakeiri&Sopf;</h2>
-  <h4>"Artful creations, unforgettable moments"</h4>
+  <h4>"Artful creations, unforgettable flavors."</h4>
 
-  <!-- Login Box -->
   <div class="login-box">
     <h3>Login</h3>
-    <form action="/login" method="POST">
-      <input type="text" name="username" placeholder="Enter Username" required>
-      <input type="password" name="password" placeholder="Enter Password" required>
-      <input type="submit" value="Login">
-    </form>
-    <button class="register-btn">Register Now</button>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button id="loginBtn" class="login-btn">Login</button>
+    <button class="register-btn" onclick="window.location.href='register.html'">Register Now</button>
+    <p id="loginStatus"></p>
   </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script>
+    // Login functionality
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      if (!email || !password) {
+        document.getElementById("loginStatus").innerText = "⚠ Please fill in all fields.";
+        return;
+      }
+
+      try {
+        // Example Firebase login (you must configure in firebase.js)
+        const { signInWithEmailAndPassword, auth } = await import("./firebase.js");
+        await signInWithEmailAndPassword(auth, email, password);
+
+        document.getElementById("loginStatus").innerText = "✅ Login successful!";
+        // Redirect to dashboard/home page
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
+
+      } catch (error) {
+        console.error(error);
+        document.getElementById("loginStatus").innerText = "❌ Login failed: " + error.message;
+      }
+    });
+  </script>
 </body>
 </html>
