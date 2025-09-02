@@ -98,11 +98,11 @@ async function proceedToBuy() {
   };
 
   try {
-    const response = await fetch('http://localhost:3000/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(emailContent)
-    });
+    const response = await fetch('/.netlify/functions/send-email', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(emailContent)
+});
     if (response.ok) {
       alert(`Order placed! An email with Reference ID ${refID} has been sent to ${email} and rockstarking775@gmail.com.`);
       cart = [];
